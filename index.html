@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nama Kamu — Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <canvas id="webgl-bg"></canvas>
+  <div class="vignette"></div>
+
+  <div class="page-content">
+
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand"><span class="dot"></span> nama-kamu.dev</div>
+      <nav class="nav">
+        <a href="index.html" class="active">Portfolio</a>
+        <a href="links.html">Links</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <div class="kicker">project log — 2026</div>
+        <h1>Halo, saya <span>Welzeen</span>.<br>Ini kumpulan project web &amp; app yang sudah saya buat.</h1>
+        <p>Tulis 1–2 kalimat singkat tentang siapa kamu, fokus keahlianmu (misalnya: front-end developer, mobile developer, UI/UX), dan apa yang kamu cari sekarang.</p>
+        <div class="hero-actions">
+          <a href="links.html" class="btn btn-primary">Lihat semua link →</a>
+          <a href="mailto:emailkamu@email.com" class="btn btn-ghost">Hubungi saya</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <!-- GANTI DI SINI: taruh foto kamu di assets/ (misal assets/foto-profil.jpg) lalu hapus komentar di bawah -->
+        <!-- <img src="assets/foto-profil.jpg" alt="Foto Welzeen"> -->
+        foto profil<br>168×168
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap">
+
+    <div class="section-head reveal">
+      <h2>Projects</h2>
+      <span class="count">6 project ditampilkan</span>
+    </div>
+
+    <p class="edit-note reveal">
+      <strong>Cara edit:</strong> buka <code>index.html</code>, cari komentar
+      <code>&lt;!-- GANTI DI SINI --&gt;</code> di tiap kartu. Ganti gambar di folder
+      <code>assets/projects/</code>, ubah judul, deskripsi, tag, dan link project kamu.
+      Untuk kategori filter, ubah atribut <code>data-category</code> di tiap
+      <code>&lt;article&gt;</code> jadi <code>web</code>, <code>app</code>, atau kategori lain buatanmu.
+    </p>
+
+    <!-- FILTER TABS: tombol "Semua" wajib ada (data-filter="all").
+         Tambah/hapus tombol lain sesuai kategori project kamu,
+         pastikan nilai data-filter sama persis dengan data-category di kartu. -->
+    <div class="filter-tabs reveal" role="tablist" aria-label="Filter kategori project">
+      <button class="filter-tab active" data-filter="all">Semua <span class="n">6</span></button>
+      <button class="filter-tab" data-filter="web">Web <span class="n">4</span></button>
+      <button class="filter-tab" data-filter="app">App <span class="n">2</span></button>
+    </div>
+
+    <div class="grid" id="project-grid">
+
+      <!-- ===================== KARTU PROJECT 1 ===================== -->
+      <article class="card reveal" data-tilt data-category="web">
+        <div class="card-chrome">
+          <div class="chrome-dots"><span></span><span></span><span></span></div>
+          <span class="filename">project-01.web</span>
+        </div>
+        <div class="card-media">
+          <!-- GANTI DI SINI: taruh file gambar kamu di assets/projects/ lalu ganti src -->
+          <!-- <img src="assets/projects/project-01.jpg" alt="Screenshot Project 1"> -->
+          <span class="placeholder-label">1200×750 — taruh screenshot project di sini</span>
+        </div>
+        <div class="card-body">
+          <!-- GANTI DI SINI: judul & deskripsi -->
+          <h3>Nama Project 1</h3>
+          <p>Deskripsi singkat: masalah apa yang diselesaikan project ini dan peran kamu di dalamnya.</p>
+          <div class="tags">
+            <!-- GANTI DI SINI: tech stack -->
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Tailwind</span>
+          </div>
+          <!-- GANTI DI SINI: link project -->
+          <a href="#" class="card-link" target="_blank" rel="noopener">Lihat project <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <!-- ===================== KARTU PROJECT 2 ===================== -->
+      <article class="card reveal" data-tilt data-category="app">
+        <div class="card-chrome">
+          <div class="chrome-dots"><span></span><span></span><span></span></div>
+          <span class="filename">project-02.apk</span>
+        </div>
+        <div class="card-media">
+          <!-- <img src="assets/projects/project-02.jpg" alt="Screenshot Project 2"> -->
+          <span class="placeholder-label">1200×750 — taruh screenshot project di sini</span>
+        </div>
+        <div class="card-body">
+          <h3>Nama Project 2</h3>
+          <p>Deskripsi singkat project mobile/app kamu di sini.</p>
+          <div class="tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Firebase</span>
+          </div>
+          <a href="#" class="card-link" target="_blank" rel="noopener">Lihat project <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <!-- ===================== KARTU PROJECT 3 ===================== -->
+      <article class="card reveal" data-tilt data-category="web">
+        <div class="card-chrome">
+          <div class="chrome-dots"><span></span><span></span><span></span></div>
+          <span class="filename">project-03.web</span>
+        </div>
+        <div class="card-media">
+          <!-- <img src="assets/projects/project-03.jpg" alt="Screenshot Project 3"> -->
+          <span class="placeholder-label">1200×750 — taruh screenshot project di sini</span>
+        </div>
+        <div class="card-body">
+          <h3>Nama Project 3</h3>
+          <p>Deskripsi singkat project ketiga kamu di sini.</p>
+          <div class="tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">MongoDB</span>
+          </div>
+          <a href="#" class="card-link" target="_blank" rel="noopener">Lihat project <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <!-- ===================== KARTU PROJECT 4 ===================== -->
+      <article class="card reveal" data-tilt data-category="app">
+        <div class="card-chrome">
+          <div class="chrome-dots"><span></span><span></span><span></span></div>
+          <span class="filename">project-04.apk</span>
+        </div>
+        <div class="card-media">
+          <!-- <img src="assets/projects/project-04.jpg" alt="Screenshot Project 4"> -->
+          <span class="placeholder-label">1200×750 — taruh screenshot project di sini</span>
+        </div>
+        <div class="card-body">
+          <h3>Nama Project 4</h3>
+          <p>Deskripsi singkat project keempat kamu di sini.</p>
+          <div class="tags">
+            <span class="tag">Kotlin</span>
+            <span class="tag">Room DB</span>
+          </div>
+          <a href="#" class="card-link" target="_blank" rel="noopener">Lihat project <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <!-- ===================== KARTU PROJECT 5 ===================== -->
+      <article class="card reveal" data-tilt data-category="web">
+        <div class="card-chrome">
+          <div class="chrome-dots"><span></span><span></span><span></span></div>
+          <span class="filename">project-05.web</span>
+        </div>
+        <div class="card-media">
+          <!-- <img src="assets/projects/project-05.jpg" alt="Screenshot Project 5"> -->
+          <span class="placeholder-label">1200×750 — taruh screenshot project di sini</span>
+        </div>
+        <div class="card-body">
+          <h3>Nama Project 5</h3>
+          <p>Deskripsi singkat project kelima kamu di sini.</p>
+          <div class="tags">
+            <span class="tag">Vue</span>
+            <span class="tag">Laravel</span>
+          </div>
+          <a href="#" class="card-link" target="_blank" rel="noopener">Lihat project <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <!-- ===================== KARTU PROJECT 6 ===================== -->
+      <article class="card reveal" data-tilt data-category="web">
+        <div class="card-chrome">
+          <div class="chrome-dots"><span></span><span></span><span></span></div>
+          <span class="filename">project-06.web</span>
+        </div>
+        <div class="card-media">
+          <!-- <img src="assets/projects/project-06.jpg" alt="Screenshot Project 6"> -->
+          <span class="placeholder-label">1200×750 — taruh screenshot project di sini</span>
+        </div>
+        <div class="card-body">
+          <h3>Nama Project 6</h3>
+          <p>Deskripsi singkat project keenam kamu di sini.</p>
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JS</span>
+          </div>
+          <a href="#" class="card-link" target="_blank" rel="noopener">Lihat project <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:10px;">
+      <span>© 2026 Nama Kamu</span>
+      <span>dibuat dengan HTML, CSS &amp; sedikit JS</span>
+    </div>
+  </footer>
+
+  </div><!-- /.page-content -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
