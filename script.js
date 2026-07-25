@@ -130,7 +130,7 @@ function initBackground(){
 function initCardTilt(){
   if (reduceMotion || isCoarsePointer) return;
 
-  const cards = document.querySelectorAll('.card[data-tilt]');
+  const cards = document.querySelectorAll('[data-tilt]');
   cards.forEach((card) => {
     const strength = 8; // derajat maksimum kemiringan
 
@@ -240,6 +240,53 @@ function initFilters(){
 }
 
 /* ---------------------------------------------------------
+   6) MENU HAMBURGER MOBILE — buka/tutup nav di layar kecil
+   --------------------------------------------------------- */
+function initMobileNav(){
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.site-header .nav');
+  const backdrop = document.querySelector('.nav-backdrop');
+  if (!toggle || !nav) return;
+
+  function closeMenu(){
+    nav.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    if (backdrop) backdrop.classList.remove('is-open');
+  }
+
+  function openMenu(){
+    nav.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    if (backdrop) backdrop.classList.add('is-open');
+  }
+
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.contains('is-open');
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  // tutup menu saat salah satu link diklik (biar nggak nyangkut kebuka pas pindah halaman)
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // tutup menu saat klik backdrop gelap di belakangnya
+  if (backdrop){
+    backdrop.addEventListener('click', closeMenu);
+  }
+
+  // tutup menu dengan tombol Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  // kalau layar di-resize jadi besar (misal rotate tablet), pastikan menu ketutup & reset
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 720) closeMenu();
+  });
+}
+
+/* ---------------------------------------------------------
    Jalankan semua setelah DOM siap
    --------------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
@@ -248,4 +295,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initMagnetic();
   initFilters();
+  initMobileNav();
 });

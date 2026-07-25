@@ -3,7 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nama Kamu — Links</title>
+<title>Welzeen — Links</title>
+<meta name="description" content="Semua link Welzeen dalam satu halaman: GitHub, LinkedIn, Instagram, email, dan CV.">
+<meta name="theme-color" content="#0D0F12">
+
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Welzeen — Links">
+<meta property="og:description" content="Semua link Welzeen dalam satu halaman: GitHub, LinkedIn, Instagram, email, dan CV.">
+<meta property="og:image" content="assets/icons/og-image.png">
+<meta property="og:url" content="https://welzeen.dev/links.html">
+<meta property="og:locale" content="id_ID">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Welzeen — Links">
+<meta name="twitter:description" content="Semua link Welzeen dalam satu halaman: GitHub, LinkedIn, Instagram, email, dan CV.">
+<meta name="twitter:image" content="assets/icons/og-image.png">
+
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,13 +34,20 @@
 
   <header class="site-header">
     <div class="wrap">
-      <div class="brand"><span class="dot"></span> nama-kamu.dev</div>
+      <div class="brand"><span class="dot"></span> welzeen.dev</div>
       <nav class="nav">
-        <a href="index.html">Portfolio</a>
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="about.html">Tentang</a>
         <a href="links.html" class="active">Links</a>
       </nav>
+        <button class="nav-toggle" aria-label="Buka menu navigasi" aria-expanded="false">
+          <span class="nav-toggle-bars"><span></span><span></span><span></span></span>
+        </button>
     </div>
   </header>
+
+  <div class="nav-backdrop"></div>
 
   <section class="links-page">
     <div class="links-card">
@@ -41,7 +67,7 @@
       <div class="link-list">
 
         <!-- GANTI DI SINI: ganti href, label, dan sub-teks tiap link -->
-        <a href="index.html" class="link-row magnetic">
+        <a href="portfolio.html" class="link-row magnetic">
           <span class="icon">▣</span>
           <span class="label">Portfolio Project<span class="sub">Semua project web &amp; app</span></span>
           <span class="go">→</span>
@@ -79,7 +105,7 @@
 
       </div>
 
-      <a href="index.html" class="back-link">← kembali ke portfolio</a>
+      <a href="index.html" class="back-link">← kembali ke home</a>
     </div>
   </section>
 

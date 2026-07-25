@@ -3,7 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nama Kamu — Portfolio</title>
+<title>Welzeen — Web & App Developer Portfolio</title>
+<meta name="description" content="Portfolio Welzeen: kumpulan project web dan aplikasi, lengkap dengan demo, tech stack, dan cara menghubungi.">
+<meta name="theme-color" content="#0D0F12">
+
+<!-- favicon -->
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+
+<!-- Open Graph / social share preview (WhatsApp, LinkedIn, Facebook) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Welzeen — Web & App Developer Portfolio">
+<meta property="og:description" content="Kumpulan project web dan aplikasi, lengkap dengan demo, tech stack, dan cara menghubungi.">
+<meta property="og:image" content="assets/icons/og-image.png">
+<meta property="og:url" content="https://welzeen.dev/">
+<meta property="og:locale" content="id_ID">
+
+<!-- Twitter/X card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Welzeen — Web & App Developer Portfolio">
+<meta name="twitter:description" content="Kumpulan project web dan aplikasi, lengkap dengan demo, tech stack, dan cara menghubungi.">
+<meta name="twitter:image" content="assets/icons/og-image.png">
+
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,13 +37,20 @@
 
   <header class="site-header">
     <div class="wrap">
-      <div class="brand"><span class="dot"></span> nama-kamu.dev</div>
+      <div class="brand"><span class="dot"></span> welzeen.dev</div>
       <nav class="nav">
-        <a href="index.html" class="active">Portfolio</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="about.html">Tentang</a>
         <a href="links.html">Links</a>
       </nav>
+        <button class="nav-toggle" aria-label="Buka menu navigasi" aria-expanded="false">
+          <span class="nav-toggle-bars"><span></span><span></span><span></span></span>
+        </button>
     </div>
   </header>
+
+  <div class="nav-backdrop"></div>
 
   <section class="hero">
     <div class="wrap">
@@ -30,182 +59,123 @@
         <h1>Halo, saya <span>Welzeen</span>.<br>Ini kumpulan project web &amp; app yang sudah saya buat.</h1>
         <p>Tulis 1–2 kalimat singkat tentang siapa kamu, fokus keahlianmu (misalnya: front-end developer, mobile developer, UI/UX), dan apa yang kamu cari sekarang.</p>
         <div class="hero-actions">
-          <a href="links.html" class="btn btn-primary">Lihat semua link →</a>
+          <a href="portfolio.html" class="btn btn-primary">Lihat Portfolio →</a>
           <a href="mailto:emailkamu@email.com" class="btn btn-ghost">Hubungi saya</a>
         </div>
       </div>
-      <div class="hero-photo">
-        <!-- GANTI DI SINI: taruh foto kamu di assets/ (misal assets/foto-profil.jpg) lalu hapus komentar di bawah -->
-        <!-- <img src="assets/foto-profil.jpg" alt="Foto Welzeen"> -->
-        foto profil<br>168×168
+      <div class="hero-illustration" aria-hidden="true">
+        <!-- Ilustrasi karakter animasi original (bukan karakter berhak cipta apa pun) —
+             robot developer kecil, melayang, mata berkedip, layar dada berkedip kode.
+             Kalau nanti mau ganti dengan foto asli, hapus <svg>...</svg> di bawah dan
+             ganti dengan <img src="assets/foto-profil.jpg" alt="Foto Welzeen">. -->
+        <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" class="bot-svg">
+          <defs>
+            <radialGradient id="botGlow" cx="50%" cy="35%" r="65%">
+              <stop offset="0%" stop-color="#2A2E37"/>
+              <stop offset="100%" stop-color="#15181D"/>
+            </radialGradient>
+          </defs>
+
+          <!-- aura belakang -->
+          <circle cx="120" cy="120" r="98" fill="url(#botGlow)"/>
+          <circle cx="120" cy="120" r="98" fill="none" stroke="#F2B84B" stroke-opacity="0.18" stroke-width="1.5"/>
+
+          <!-- partikel mengambang -->
+          <g class="bot-particles" fill="#F2B84B">
+            <circle cx="46" cy="70" r="3" opacity="0.8"/>
+            <circle cx="196" cy="60" r="2.4" opacity="0.6"/>
+            <circle cx="200" cy="150" r="3" opacity="0.7"/>
+            <circle cx="38" cy="160" r="2" opacity="0.5"/>
+          </g>
+
+          <!-- grup robot: seluruhnya melayang naik-turun -->
+          <g class="bot-float">
+            <!-- antena -->
+            <line x1="120" y1="55" x2="120" y2="38" stroke="#5FD3A3" stroke-width="3" stroke-linecap="round"/>
+            <circle class="bot-antenna-tip" cx="120" cy="34" r="5" fill="#5FD3A3"/>
+
+            <!-- kepala -->
+            <rect x="72" y="55" width="96" height="78" rx="22" fill="#1C2028" stroke="#F2B84B" stroke-width="2"/>
+
+            <!-- layar wajah -->
+            <rect x="86" y="70" width="68" height="46" rx="10" fill="#0D0F12"/>
+
+            <!-- mata (berkedip) -->
+            <g class="bot-eyes" fill="#F2B84B">
+              <circle cx="108" cy="93" r="6"/>
+              <circle cx="132" cy="93" r="6"/>
+            </g>
+
+            <!-- senyum kecil -->
+            <path d="M108 106 Q120 114 132 106" stroke="#5FD3A3" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+            <!-- badan -->
+            <rect x="84" y="140" width="72" height="60" rx="16" fill="#1C2028" stroke="#262B33" stroke-width="2"/>
+
+            <!-- panel dada berkedip kode -->
+            <rect x="96" y="152" width="48" height="36" rx="6" fill="#0D0F12"/>
+            <g class="bot-code-lines" stroke="#5FD3A3" stroke-width="2.5" stroke-linecap="round">
+              <line x1="102" y1="161" x2="122" y2="161"/>
+              <line x1="102" y1="169" x2="138" y2="169"/>
+              <line x1="102" y1="177" x2="114" y2="177"/>
+            </g>
+
+            <!-- lengan -->
+            <rect x="62" y="150" width="16" height="34" rx="8" fill="#1C2028" stroke="#262B33" stroke-width="2"/>
+            <rect x="162" y="150" width="16" height="34" rx="8" fill="#1C2028" stroke="#262B33" stroke-width="2"/>
+          </g>
+        </svg>
       </div>
     </div>
   </section>
 
-  <main class="wrap">
+  <!-- ===================== HALAMAN PILIHAN (bukan project grid) =====================
+       Ini pengganti "scroll ke bawah lihat project". User klik salah satu kartu di bawah
+       untuk pindah ke halaman terpisah (portfolio.html atau links.html). -->
+  <section class="options">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Mau lihat apa?</h2>
+        <span class="count">pilih salah satu</span>
+      </div>
 
-    <div class="section-head reveal">
-      <h2>Projects</h2>
-      <span class="count">6 project ditampilkan</span>
+      <div class="options-grid">
+
+        <a href="portfolio.html" class="option-card featured reveal" data-tilt>
+          <div class="icon">▣</div>
+          <h3>Lihat Portfolio</h3>
+          <p>Kumpulan project web &amp; aplikasi yang sudah saya kerjakan, lengkap dengan screenshot dan link demo.</p>
+          <span class="go">Buka halaman <span class="arrow">→</span></span>
+        </a>
+
+        <a href="about.html" class="option-card reveal" data-tilt>
+          <div class="icon">☺</div>
+          <h3>Tentang Saya</h3>
+          <p>Cerita singkat, tech stack yang saya kuasai, dan perjalanan pengalaman kerja/belajar saya.</p>
+          <span class="go">Buka halaman <span class="arrow">→</span></span>
+        </a>
+
+        <a href="links.html" class="option-card reveal" data-tilt>
+          <div class="icon">⚭</div>
+          <h3>Semua Link Saya</h3>
+          <p>GitHub, LinkedIn, Instagram, email, dan CV — semua terkumpul rapi dalam satu halaman.</p>
+          <span class="go">Buka halaman <span class="arrow">→</span></span>
+        </a>
+
+        <a href="mailto:emailkamu@email.com" class="option-card reveal" data-tilt>
+          <div class="icon">@</div>
+          <h3>Hubungi Saya</h3>
+          <p>Ada project atau kolaborasi yang ingin didiskusikan? Kirim email langsung ke saya.</p>
+          <span class="go">Kirim email <span class="arrow">→</span></span>
+        </a>
+
+      </div>
     </div>
-
-    <p class="edit-note reveal">
-      <strong>Cara edit:</strong> buka <code>index.html</code>, cari komentar
-      <code>&lt;!-- GANTI DI SINI --&gt;</code> di tiap kartu. Ganti gambar di folder
-      <code>assets/projects/</code>, ubah judul, deskripsi, tag, dan link project kamu.
-      Untuk kategori filter, ubah atribut <code>data-category</code> di tiap
-      <code>&lt;article&gt;</code> jadi <code>web</code>, <code>app</code>, atau kategori lain buatanmu.
-    </p>
-
-    <!-- FILTER TABS: tombol "Semua" wajib ada (data-filter="all").
-         Tambah/hapus tombol lain sesuai kategori project kamu,
-         pastikan nilai data-filter sama persis dengan data-category di kartu. -->
-    <div class="filter-tabs reveal" role="tablist" aria-label="Filter kategori project">
-      <button class="filter-tab active" data-filter="all">Semua <span class="n">6</span></button>
-      <button class="filter-tab" data-filter="web">Web <span class="n">4</span></button>
-      <button class="filter-tab" data-filter="app">App <span class="n">2</span></button>
-    </div>
-
-    <div class="grid" id="project-grid">
-
-      <!-- ===================== KARTU PROJECT 1 ===================== -->
-      <article class="card reveal" data-tilt data-category="web">
-        <div class="card-chrome">
-          <div class="chrome-dots"><span></span><span></span><span></span></div>
-          <span class="filename">project-01.web</span>
-        </div>
-        <div class="card-media">
-          <!-- GANTI DI SINI: taruh file gambar kamu di assets/projects/ lalu ganti src -->
-          <!-- <img src="assets/projects/project-01.jpg" alt="Screenshot Project 1"> -->
-          <span class="placeholder-label">1200×750 — taruh screenshot project di sini</span>
-        </div>
-        <div class="card-body">
-          <!-- GANTI DI SINI: judul & deskripsi -->
-          <h3>Nama Project 1</h3>
-          <p>Deskripsi singkat: masalah apa yang diselesaikan project ini dan peran kamu di dalamnya.</p>
-          <div class="tags">
-            <!-- GANTI DI SINI: tech stack -->
-            <span class="tag">React</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">Tailwind</span>
-          </div>
-          <!-- GANTI DI SINI: link project -->
-          <a href="#" class="card-link" target="_blank" rel="noopener">Lihat project <span class="arrow">→</span></a>
-        </div>
-      </article>
-
-      <!-- ===================== KARTU PROJECT 2 ===================== -->
-      <article class="card reveal" data-tilt data-category="app">
-        <div class="card-chrome">
-          <div class="chrome-dots"><span></span><span></span><span></span></div>
-          <span class="filename">project-02.apk</span>
-        </div>
-        <div class="card-media">
-          <!-- <img src="assets/projects/project-02.jpg" alt="Screenshot Project 2"> -->
-          <span class="placeholder-label">1200×750 — taruh screenshot project di sini</span>
-        </div>
-        <div class="card-body">
-          <h3>Nama Project 2</h3>
-          <p>Deskripsi singkat project mobile/app kamu di sini.</p>
-          <div class="tags">
-            <span class="tag">Flutter</span>
-            <span class="tag">Firebase</span>
-          </div>
-          <a href="#" class="card-link" target="_blank" rel="noopener">Lihat project <span class="arrow">→</span></a>
-        </div>
-      </article>
-
-      <!-- ===================== KARTU PROJECT 3 ===================== -->
-      <article class="card reveal" data-tilt data-category="web">
-        <div class="card-chrome">
-          <div class="chrome-dots"><span></span><span></span><span></span></div>
-          <span class="filename">project-03.web</span>
-        </div>
-        <div class="card-media">
-          <!-- <img src="assets/projects/project-03.jpg" alt="Screenshot Project 3"> -->
-          <span class="placeholder-label">1200×750 — taruh screenshot project di sini</span>
-        </div>
-        <div class="card-body">
-          <h3>Nama Project 3</h3>
-          <p>Deskripsi singkat project ketiga kamu di sini.</p>
-          <div class="tags">
-            <span class="tag">Next.js</span>
-            <span class="tag">MongoDB</span>
-          </div>
-          <a href="#" class="card-link" target="_blank" rel="noopener">Lihat project <span class="arrow">→</span></a>
-        </div>
-      </article>
-
-      <!-- ===================== KARTU PROJECT 4 ===================== -->
-      <article class="card reveal" data-tilt data-category="app">
-        <div class="card-chrome">
-          <div class="chrome-dots"><span></span><span></span><span></span></div>
-          <span class="filename">project-04.apk</span>
-        </div>
-        <div class="card-media">
-          <!-- <img src="assets/projects/project-04.jpg" alt="Screenshot Project 4"> -->
-          <span class="placeholder-label">1200×750 — taruh screenshot project di sini</span>
-        </div>
-        <div class="card-body">
-          <h3>Nama Project 4</h3>
-          <p>Deskripsi singkat project keempat kamu di sini.</p>
-          <div class="tags">
-            <span class="tag">Kotlin</span>
-            <span class="tag">Room DB</span>
-          </div>
-          <a href="#" class="card-link" target="_blank" rel="noopener">Lihat project <span class="arrow">→</span></a>
-        </div>
-      </article>
-
-      <!-- ===================== KARTU PROJECT 5 ===================== -->
-      <article class="card reveal" data-tilt data-category="web">
-        <div class="card-chrome">
-          <div class="chrome-dots"><span></span><span></span><span></span></div>
-          <span class="filename">project-05.web</span>
-        </div>
-        <div class="card-media">
-          <!-- <img src="assets/projects/project-05.jpg" alt="Screenshot Project 5"> -->
-          <span class="placeholder-label">1200×750 — taruh screenshot project di sini</span>
-        </div>
-        <div class="card-body">
-          <h3>Nama Project 5</h3>
-          <p>Deskripsi singkat project kelima kamu di sini.</p>
-          <div class="tags">
-            <span class="tag">Vue</span>
-            <span class="tag">Laravel</span>
-          </div>
-          <a href="#" class="card-link" target="_blank" rel="noopener">Lihat project <span class="arrow">→</span></a>
-        </div>
-      </article>
-
-      <!-- ===================== KARTU PROJECT 6 ===================== -->
-      <article class="card reveal" data-tilt data-category="web">
-        <div class="card-chrome">
-          <div class="chrome-dots"><span></span><span></span><span></span></div>
-          <span class="filename">project-06.web</span>
-        </div>
-        <div class="card-media">
-          <!-- <img src="assets/projects/project-06.jpg" alt="Screenshot Project 6"> -->
-          <span class="placeholder-label">1200×750 — taruh screenshot project di sini</span>
-        </div>
-        <div class="card-body">
-          <h3>Nama Project 6</h3>
-          <p>Deskripsi singkat project keenam kamu di sini.</p>
-          <div class="tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JS</span>
-          </div>
-          <a href="#" class="card-link" target="_blank" rel="noopener">Lihat project <span class="arrow">→</span></a>
-        </div>
-      </article>
-
-    </div>
-  </main>
+  </section>
 
   <footer class="site-footer">
     <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:10px;">
-      <span>© 2026 Nama Kamu</span>
+      <span>© 2026 Welzeen</span>
       <span>dibuat dengan HTML, CSS &amp; sedikit JS</span>
     </div>
   </footer>
